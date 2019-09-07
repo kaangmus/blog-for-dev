@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)https://medium.com/media/0385d66995970c67cc5890f2cc625406 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Database tokobuku – Medium</title><meta name="description" content="Database tokobuku. GitHub Gist: instantly share code, notes, and snippets."><meta name="twitter:widgets:csp" content="on"><meta name="robots" content="noindex"><!--<base target="_blank">--><base href="." target="_blank"><style>body {text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: "ff-tisa-web-pro", Georgia, Cambria, "Times New Roman", Times, serif; font-weight: 400; color: #333332; font-size: 18px; line-height: 1.4; margin: 0; background-color: white; overflow: hidden;}iframe {max-width: 100%;}</style></head><body><style>.gist .gist-file { margin-bottom: 0 !important; }.gist { text-rendering: auto; }</style><script src="./877c1d48f68eecd461b4fb9c9c7c6d8d.js.download" charset="utf-8"></script><link rel="stylesheet" href="./gist-embed-4ac6018bcc05457cde2f66d2e7299d11.css"><div id="gist94621963" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-tokobuku-sql" class="file">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-sql ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-tokobuku-sql-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-tokobuku-sql-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">CREATE</span> <span class="pl-k">TABLE</span> `<span class="pl-en">buku</span>` (</td>
+      </tr>
+      <tr>
+        <td id="file-tokobuku-sql-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-tokobuku-sql-LC2" class="blob-code blob-code-inner js-file-line">  <span class="pl-s"><span class="pl-pds">`</span>id<span class="pl-pds">`</span></span> <span class="pl-k">int</span>(<span class="pl-c1">11</span>) <span class="pl-k">NOT NULL</span>,</td>
+      </tr>
+      <tr>
+        <td id="file-tokobuku-sql-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-tokobuku-sql-LC3" class="blob-code blob-code-inner js-file-line">  <span class="pl-s"><span class="pl-pds">`</span>judul<span class="pl-pds">`</span></span> <span class="pl-k">varchar</span>(<span class="pl-c1">60</span>) <span class="pl-k">NOT NULL</span>,</td>
+      </tr>
+      <tr>
+        <td id="file-tokobuku-sql-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-tokobuku-sql-LC4" class="blob-code blob-code-inner js-file-line">  <span class="pl-s"><span class="pl-pds">`</span>sinopsis<span class="pl-pds">`</span></span> <span class="pl-k">text</span> <span class="pl-k">NOT NULL</span>,</td>
+      </tr>
+      <tr>
+        <td id="file-tokobuku-sql-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-tokobuku-sql-LC5" class="blob-code blob-code-inner js-file-line">  <span class="pl-s"><span class="pl-pds">`</span>penulis<span class="pl-pds">`</span></span> <span class="pl-k">varchar</span>(<span class="pl-c1">60</span>) <span class="pl-k">NOT NULL</span></td>
+      </tr>
+      <tr>
+        <td id="file-tokobuku-sql-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-tokobuku-sql-LC6" class="blob-code blob-code-inner js-file-line">)</td>
+      </tr>
+      <tr>
+        <td id="file-tokobuku-sql-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-tokobuku-sql-LC7" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-tokobuku-sql-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-tokobuku-sql-LC8" class="blob-code blob-code-inner js-file-line"><span class="pl-k">INSERT INTO</span> <span class="pl-s"><span class="pl-pds">`</span>buku<span class="pl-pds">`</span></span> (<span class="pl-s"><span class="pl-pds">`</span>id<span class="pl-pds">`</span></span>, <span class="pl-s"><span class="pl-pds">`</span>judul<span class="pl-pds">`</span></span>, <span class="pl-s"><span class="pl-pds">`</span>sinopsis<span class="pl-pds">`</span></span>, <span class="pl-s"><span class="pl-pds">`</span>penulis<span class="pl-pds">`</span></span>) <span class="pl-k">VALUES</span></td>
+      </tr>
+      <tr>
+        <td id="file-tokobuku-sql-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-tokobuku-sql-LC9" class="blob-code blob-code-inner js-file-line">(<span class="pl-c1">1</span>, <span class="pl-s"><span class="pl-pds">'</span>Membuat Website Dengan NodeJs<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>Buku belajar membuat website dengan menggunakan NodeJS<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>Buda Suyasa<span class="pl-pds">'</span></span>),</td>
+      </tr>
+      <tr>
+        <td id="file-tokobuku-sql-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-tokobuku-sql-LC10" class="blob-code blob-code-inner js-file-line">(<span class="pl-c1">2</span>, <span class="pl-s"><span class="pl-pds">'</span>Web Design Dengan CSS 3 dan Bootstrap 4<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>Buku belajar membuat desain website dengan CSS3 dan framework CSS Bootstrap<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>Aditya Sudirman<span class="pl-pds">'</span></span>),</td>
+      </tr>
+      <tr>
+        <td id="file-tokobuku-sql-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-tokobuku-sql-LC11" class="blob-code blob-code-inner js-file-line">(<span class="pl-c1">3</span>, <span class="pl-s"><span class="pl-pds">'</span>Jadi Penulis Blog dengan Wordpress<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>Buku tutorial membuat blog dengan menggunakan CMS Wordpress<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>Gayatri<span class="pl-pds">'</span></span>),</td>
+      </tr>
+      <tr>
+        <td id="file-tokobuku-sql-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-tokobuku-sql-LC12" class="blob-code blob-code-inner js-file-line">(<span class="pl-c1">4</span>, <span class="pl-s"><span class="pl-pds">'</span>Permak Foto dengan Adobe Photoshop<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>Buku belajar Adobe Photoshop untuk melakukan editing gambar.<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>Ilham<span class="pl-pds">'</span></span>);</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/budasuyasa/877c1d48f68eecd461b4fb9c9c7c6d8d/raw/54a052855c3061fb5fa32ed4e368202557de01bb/tokobuku.sql" style="float:right">view raw</a>
+        <a href="https://gist.github.com/budasuyasa/877c1d48f68eecd461b4fb9c9c7c6d8d#file-tokobuku-sql">tokobuku.sql</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<script>var height = -1; var delayMs = 200; if (document) {document.domain = document.domain;}function notifyResize(height) {height = height ? height : document.documentElement.offsetHeight; var resized = false; if (window.donkey && donkey.resize) {donkey.resize(height); resized = true;}if (parent && parent._resizeIframe) {var obj = {iframe: window.frameElement, height: height}; parent._resizeIframe(obj); resized = true;}if (window.location && window.location.hash === "#amp=1" && window.parent && window.parent.postMessage) {window.parent.postMessage({sentinel: "amp", type: "embed-size", height: height}, "*");}if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.resize) {window.webkit.messageHandlers.resize.postMessage(height); resized = true;}return resized;}function maybeResize() {try {if (document.documentElement.offsetHeight != height && notifyResize()) {height = document.documentElement.offsetHeight;}delayMs = Math.min(delayMs * 2, 1000000); setTimeout(maybeResize, delayMs);} catch(error) {console.log('maybeResize error: ', error)}}maybeResize();</script></body></html>

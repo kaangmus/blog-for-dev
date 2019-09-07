@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)https://medium.com/media/f0d9a941913f752ced36f0536059a5ef -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>medium-post-simple-rest-04 – Medium</title><meta name="description" content="GitHub is where people build software. More than 27 million people use GitHub to discover, fork, and contribute to over 80 million projects."><meta name="twitter:widgets:csp" content="on"><meta name="robots" content="noindex"><!--<base target="_blank">--><base href="." target="_blank"><style>body {text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: "ff-tisa-web-pro", Georgia, Cambria, "Times New Roman", Times, serif; font-weight: 400; color: #333332; font-size: 18px; line-height: 1.4; margin: 0; background-color: white; overflow: hidden;}iframe {max-width: 100%;}</style></head><body><style>.gist .gist-file { margin-bottom: 0 !important; }.gist { text-rendering: auto; }</style><script src="./7666b2fa1f0b9db41fe2b9b100221295.js.download" charset="utf-8"></script><link rel="stylesheet" href="./gist-embed-4ac6018bcc05457cde2f66d2e7299d11.css"><div id="gist89400618" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-index-js" class="file">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-javascript ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-index-js-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-index-js-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">const</span> <span class="pl-c1">bodyParser</span> <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>body-parser<span class="pl-pds">'</span></span>); <span class="pl-c"><span class="pl-c">//</span>post body handler</span></td>
+      </tr>
+      <tr>
+        <td id="file-index-js-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-index-js-LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-k">const</span> { <span class="pl-c1">check</span>, <span class="pl-c1">validationResult</span> } <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>express-validator/check<span class="pl-pds">'</span></span>); <span class="pl-c"><span class="pl-c">//</span>form validation</span></td>
+      </tr>
+      <tr>
+        <td id="file-index-js-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-index-js-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-k">const</span> { <span class="pl-c1">matchedData</span>, <span class="pl-c1">sanitize</span> } <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>express-validator/filter<span class="pl-pds">'</span></span>); <span class="pl-c"><span class="pl-c">//</span>sanitize form params</span></td>
+      </tr>
+      <tr>
+        <td id="file-index-js-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-index-js-LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-k">const</span> <span class="pl-c1">multer</span>  <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>multer<span class="pl-pds">'</span></span>); <span class="pl-c"><span class="pl-c">//</span>multipar form-data</span></td>
+      </tr>
+      <tr>
+        <td id="file-index-js-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-index-js-LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-k">const</span> <span class="pl-c1">path</span> <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>path<span class="pl-pds">'</span></span>);</td>
+      </tr>
+      <tr>
+        <td id="file-index-js-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-index-js-LC6" class="blob-code blob-code-inner js-file-line"><span class="pl-k">const</span> <span class="pl-c1">crypto</span> <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>crypto<span class="pl-pds">'</span></span>);</td>
+      </tr>
+      <tr>
+        <td id="file-index-js-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-index-js-LC7" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-index-js-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-index-js-LC8" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">//</span>Set body parser for HTTP post operation</span></td>
+      </tr>
+      <tr>
+        <td id="file-index-js-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-index-js-LC9" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">app</span>.<span class="pl-en">use</span>(<span class="pl-smi">bodyParser</span>.<span class="pl-en">json</span>()); <span class="pl-c"><span class="pl-c">//</span> support json encoded bodies</span></td>
+      </tr>
+      <tr>
+        <td id="file-index-js-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-index-js-LC10" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">app</span>.<span class="pl-en">use</span>(<span class="pl-smi">bodyParser</span>.<span class="pl-en">urlencoded</span>({ extended<span class="pl-k">:</span> <span class="pl-c1">true</span> })); <span class="pl-c"><span class="pl-c">//</span> support encoded bodies</span></td>
+      </tr>
+      <tr>
+        <td id="file-index-js-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-index-js-LC11" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-index-js-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-index-js-LC12" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">//</span>set static assets to public directory</span></td>
+      </tr>
+      <tr>
+        <td id="file-index-js-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-index-js-LC13" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">app</span>.<span class="pl-en">use</span>(<span class="pl-smi">express</span>.<span class="pl-en">static</span>(<span class="pl-s"><span class="pl-pds">'</span>public<span class="pl-pds">'</span></span>));</td>
+      </tr>
+      <tr>
+        <td id="file-index-js-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-index-js-LC14" class="blob-code blob-code-inner js-file-line"><span class="pl-k">const</span> <span class="pl-c1">uploadDir</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>/img/<span class="pl-pds">'</span></span>;</td>
+      </tr>
+      <tr>
+        <td id="file-index-js-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-index-js-LC15" class="blob-code blob-code-inner js-file-line"><span class="pl-k">const</span> <span class="pl-c1">storage</span> <span class="pl-k">=</span> <span class="pl-smi">multer</span>.<span class="pl-en">diskStorage</span>({</td>
+      </tr>
+      <tr>
+        <td id="file-index-js-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-index-js-LC16" class="blob-code blob-code-inner js-file-line">    destination<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>./public<span class="pl-pds">"</span></span><span class="pl-k">+</span>uploadDir,</td>
+      </tr>
+      <tr>
+        <td id="file-index-js-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-index-js-LC17" class="blob-code blob-code-inner js-file-line">    <span class="pl-en">filename</span><span class="pl-k">:</span> <span class="pl-k">function</span> (<span class="pl-smi">req</span>, <span class="pl-smi">file</span>, <span class="pl-smi">cb</span>) {</td>
+      </tr>
+      <tr>
+        <td id="file-index-js-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-index-js-LC18" class="blob-code blob-code-inner js-file-line">      <span class="pl-smi">crypto</span>.<span class="pl-en">pseudoRandomBytes</span>(<span class="pl-c1">16</span>, <span class="pl-k">function</span> (<span class="pl-smi">err</span>, <span class="pl-smi">raw</span>) {</td>
+      </tr>
+      <tr>
+        <td id="file-index-js-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-index-js-LC19" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">if</span> (err) <span class="pl-k">return</span> <span class="pl-en">cb</span>(err)  </td>
+      </tr>
+      <tr>
+        <td id="file-index-js-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-index-js-LC20" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-index-js-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-index-js-LC21" class="blob-code blob-code-inner js-file-line">        <span class="pl-en">cb</span>(<span class="pl-c1">null</span>, <span class="pl-smi">raw</span>.<span class="pl-c1">toString</span>(<span class="pl-s"><span class="pl-pds">'</span>hex<span class="pl-pds">'</span></span>) <span class="pl-k">+</span> <span class="pl-smi">path</span>.<span class="pl-en">extname</span>(<span class="pl-smi">file</span>.<span class="pl-smi">originalname</span>))</td>
+      </tr>
+      <tr>
+        <td id="file-index-js-L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="file-index-js-LC22" class="blob-code blob-code-inner js-file-line">      })</td>
+      </tr>
+      <tr>
+        <td id="file-index-js-L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="file-index-js-LC23" class="blob-code blob-code-inner js-file-line">    }</td>
+      </tr>
+      <tr>
+        <td id="file-index-js-L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td id="file-index-js-LC24" class="blob-code blob-code-inner js-file-line">})</td>
+      </tr>
+      <tr>
+        <td id="file-index-js-L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td id="file-index-js-LC25" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-index-js-L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td id="file-index-js-LC26" class="blob-code blob-code-inner js-file-line"><span class="pl-k">const</span> <span class="pl-c1">upload</span> <span class="pl-k">=</span> <span class="pl-en">multer</span>({storage<span class="pl-k">:</span> storage, dest<span class="pl-k">:</span> uploadDir });</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/budasuyasa/7666b2fa1f0b9db41fe2b9b100221295/raw/63d2b764dbb39cc64113b3e31a4a3049c902ea97/index.js" style="float:right">view raw</a>
+        <a href="https://gist.github.com/budasuyasa/7666b2fa1f0b9db41fe2b9b100221295#file-index-js">index.js</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<script>var height = -1; var delayMs = 200; if (document) {document.domain = document.domain;}function notifyResize(height) {height = height ? height : document.documentElement.offsetHeight; var resized = false; if (window.donkey && donkey.resize) {donkey.resize(height); resized = true;}if (parent && parent._resizeIframe) {var obj = {iframe: window.frameElement, height: height}; parent._resizeIframe(obj); resized = true;}if (window.location && window.location.hash === "#amp=1" && window.parent && window.parent.postMessage) {window.parent.postMessage({sentinel: "amp", type: "embed-size", height: height}, "*");}if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.resize) {window.webkit.messageHandlers.resize.postMessage(height); resized = true;}return resized;}function maybeResize() {try {if (document.documentElement.offsetHeight != height && notifyResize()) {height = document.documentElement.offsetHeight;}delayMs = Math.min(delayMs * 2, 1000000); setTimeout(maybeResize, delayMs);} catch(error) {console.log('maybeResize error: ', error)}}maybeResize();</script></body></html>

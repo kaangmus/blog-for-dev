@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!-- saved from url=(0140)https://codepen.io/anon/embed/dMQGmq?height=470&theme-id=23269&slug-hash=dMQGmq&default-tab=result&embed-version=2&user=anon&name=cp_embed_1 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width">
+<title>CodePen Embed - Working with Deltas</title>
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="7dAvEmVemoyMuiFRHhaGCsyvyeGP2DjSa6GpdzhRnbjnNMIL7tuQ1cP2P9sEQUNHaja/KxVFYWFBbLTJ2k/OmQ==">
+<link rel="stylesheet" media="all" href="./embed-1381bc37a8f96675cd4d5f734c40ac9d8efa7503e39ad83730639e30848e7ae9.css">
+<style>
+    .hide {
+      display: none !important;
+    }
+
+    .embed-footer,
+    .embed-nav {
+      background: #000000;
+      
+    }
+    .embed-nav .code-types a,
+    .embed-nav .result-button-list a,
+    .action-button {
+      color: #ffffff;
+      background-color: #000000;
+    }
+    .embed-nav .code-types a.active,
+    .embed-nav .result-button-list a.active,
+    .action-button.active {
+      background: #f3d200;
+      color: #1d1e31;
+      box-shadow: inset 0px 3px #f3d200;
+    }
+    .embed-nav .logo-wrap a {
+      color: #939598;
+    }
+
+    .embed-nav svg {
+      stroke: #939598 !important;
+    }
+  </style>
+<link rel="stylesheet" media="all" href="./twilight-86b2d8d64ce08f901b8946aeefde8b37185c1b1699748e443c7040ab6fc223e4.css">
+</head>
+<body id="the-body" style="border: 5px solid #000000; --borderWidth: 5px;" class="codepen-embed-body static results-active">
+<nav class="embed-nav group" id="embed-nav">
+<ul class="code-types">
+<li class="code-type">
+<a id="html-link" href="https://codepen.io/anon/embed/dMQGmq?height=470&amp;theme-id=23269&amp;slug-hash=dMQGmq&amp;default-tab=result&amp;embed-version=2&amp;user=anon&amp;name=cp_embed_1#html-box" aria-pressed="false" role="button">
+HTML
+</a>
+</li>
+<li class="code-type">
+<a id="css-link" href="https://codepen.io/anon/embed/dMQGmq?height=470&amp;theme-id=23269&amp;slug-hash=dMQGmq&amp;default-tab=result&amp;embed-version=2&amp;user=anon&amp;name=cp_embed_1#css-box" aria-pressed="false" role="button">
+CSS
+</a>
+</li>
+<li class="code-type">
+<a id="js-link" href="https://codepen.io/anon/embed/dMQGmq?height=470&amp;theme-id=23269&amp;slug-hash=dMQGmq&amp;default-tab=result&amp;embed-version=2&amp;user=anon&amp;name=cp_embed_1#js-box" aria-pressed="false" role="button">
+JS
+</a>
+</li>
+</ul>
+<ul class="result-button-list">
+<li class="results results-type">
+<a id="result-link" href="https://codepen.io/anon/embed/dMQGmq?height=470&amp;theme-id=23269&amp;slug-hash=dMQGmq&amp;default-tab=result&amp;embed-version=2&amp;user=anon&amp;name=cp_embed_1#result-box" class="active" aria-pressed="true" role="button">
+Result
+</a>
+</li>
+</ul>
+<div class="logo-wrap" id="edit-area">
+<a class="large-logo edit-on-codepen" target="_blank" rel="noopener" href="https://codepen.io/quill/pen/dMQGmq" title="Edit on CodePen">
+<span id="edit-on-text" class="open-on">EDIT ON</span>
+<svg id="embed-codepen-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138 26" fill="none" stroke="#000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+<path d="M80 6h-9v14h9 M114 6h-9 v14h9 M111 13h-6 M77 13h-6 M122 20V6l11 14V6 M22 16.7L33 24l11-7.3V9.3L33 2L22 9.3V16.7z M44 16.7L33 9.3l-11 7.4 M22 9.3l11 7.3 l11-7.3 M33 2v7.3 M33 16.7V24 M88 14h6c2.2 0 4-1.8 4-4s-1.8-4-4-4h-6v14 M15 8c-1.3-1.3-3-2-5-2c-4 0-7 3-7 7s3 7 7 7 c2 0 3.7-0.8 5-2 M64 13c0 4-3 7-7 7h-5V6h5C61 6 64 9 64 13z"></path>
+</svg>
+</a>
+<a class="box-logo edit-on-codepen" target="_blank" rel="noopener" href="https://codepen.io/quill/pen/dMQGmq" title="Edit on CodePen">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 0 26 26" fill="none" stroke="#000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+<path id="icon-codepen-box" d="M22 16.7L33 24l11-7.3V9.3L33 2L22 9.3V16.7z M44 16.7L33 9.3l-11 7.4 M22 9.3l11 7.3 l11-7.3 M33 2v7.3 M33 16.7V24"></path>
+</svg>
+</a>
+</div>
+</nav>
+<div id="output" data-border-style="thick" data-header="true">
+<div id="html-box" class="code-wrap code-box box " role="region" aria-label="HTML">
+<pre><code data-lang="htmlmixed" id="actual-html-code" data-og-lang="htmlmixed" data-alt-lang="xml" class=" cm-s-default"><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"container"</span> <span class="cm-attribute">id</span>=<span class="cm-string">"editor-container"</span><span class="cm-tag cm-bracket">&gt;</span><br>  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">p</span><span class="cm-tag cm-bracket">&gt;</span>Gandalf the Grey<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">p</span><span class="cm-tag cm-bracket">&gt;</span><br><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span><br><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"container javascript"</span> <span class="cm-attribute">id</span>=<span class="cm-string">"delta-container"</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span><br></code></pre>
+</div>
+<div id="css-box" class="code-wrap code-box box " role="region" aria-label="CSS">
+<pre><code data-lang="css" id="actual-css-code" data-og-lang="css" data-alt-lang="css" class=" cm-s-default"><span class="cm-qualifier">.container</span> {<br>  <span class="cm-property">border</span>: <span class="cm-number">1px</span> <span class="cm-atom">solid</span> <span class="cm-atom">#ccc</span>;<br>  <span class="cm-property">box-sizing</span>: <span class="cm-atom">border-box</span>;<br>  <span class="cm-property">display</span>: <span class="cm-atom">inline-block</span>;<br>  <span class="cm-property">float</span>: <span class="cm-atom">left</span>;<br>  <span class="cm-property">height</span>: <span class="cm-number">400px</span>;<br>  <span class="cm-property">width</span>: <span class="cm-number">50%</span>;<br>}<br><span class="cm-qualifier">.container</span>:<span class="cm-variable-3">first-child</span> {<br>  <span class="cm-property">border-right</span>: <span class="cm-number">0px</span>;<br>}<br><span class="cm-builtin">#delta-container</span> {<br>  <span class="cm-property">font-family</span>: <span class="cm-atom">monospace</span>;<br>  <span class="cm-property">overflow-y</span>: <span class="cm-atom">auto</span>;<br>  <span class="cm-property">white-space</span>: <span class="cm-atom">pre-wrap</span>;<br>}<br></code></pre>
+</div>
+<div id="js-box" class="code-wrap code-box box " role="region" aria-label="JS">
+<pre><code data-lang="javascript" id="actual-js-code" data-og-lang="javascript" data-alt-lang="javascript" class=" cm-s-default"><span class="cm-keyword">var</span> <span class="cm-def">quill</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Quill</span>(<span class="cm-string">'#editor-container'</span>, {<br>  <span class="cm-property">theme</span>: <span class="cm-string">'bubble'</span><br>});<br><span class="cm-variable">quill</span>.<span class="cm-property">on</span>(<span class="cm-string">'text-change'</span>, <span class="cm-variable">update</span>);<br><span class="cm-keyword">var</span> <span class="cm-def">container</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">querySelector</span>(<span class="cm-string">'#delta-container'</span>);<br><span class="cm-variable">update</span>();<br><br><span class="cm-keyword">function</span> <span class="cm-def">update</span>(<span class="cm-def">delta</span>) {<br>  <span class="cm-keyword">var</span> <span class="cm-def">contents</span> <span class="cm-operator">=</span> <span class="cm-variable">quill</span>.<span class="cm-property">getContents</span>();<br>  <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-string">'contents'</span>, <span class="cm-variable-2">contents</span>);<br>  <span class="cm-keyword">var</span> <span class="cm-def">html</span> <span class="cm-operator">=</span> <span class="cm-string">"contents = "</span> <span class="cm-operator">+</span> <span class="cm-variable">JSON</span>.<span class="cm-property">stringify</span>(<span class="cm-variable-2">contents</span>, <span class="cm-atom">null</span>, <span class="cm-number">2</span>);<br>  <span class="cm-keyword">if</span> (<span class="cm-variable-2">delta</span>) {<br>    <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-string">'change'</span>, <span class="cm-variable-2">delta</span>)<br>    <span class="cm-variable-2">html</span> <span class="cm-operator">=</span> <span class="cm-string">"change = "</span> <span class="cm-operator">+</span> <span class="cm-variable">JSON</span>.<span class="cm-property">stringify</span>(<span class="cm-variable-2">delta</span>, <span class="cm-atom">null</span>, <span class="cm-number">2</span>) <span class="cm-operator">+</span> <span class="cm-string">"\n\n"</span> <span class="cm-operator">+</span> <span class="cm-variable-2">html</span>;<br>  }<br>  <span class="cm-variable">container</span>.<span class="cm-property">innerHTML</span> <span class="cm-operator">=</span> <span class="cm-variable-2">html</span>;<br>  <span class="cm-variable">hljs</span>.<span class="cm-property">highlightBlock</span>(<span class="cm-variable">container</span>);<br>}<br></code></pre>
+</div>
+<div id="result-box" class="code-box active" role="region" aria-label="Result">
+<iframe id="result-iframe" class="result-iframe " sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-presentation allow-same-origin allow-scripts" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" tabindex="-1" data-src="https://s.codepen.io/quill/fullembedgrid/dMQGmq?type=embed&amp;animations=run" src="./dMQGmq.html" allowtransparency="true" frameborder="0" scrolling="yes" allowpaymentrequest="true" allowfullscreen="true" name="CodePen Preview for Working with Deltas" title="CodePen Preview for Working with Deltas">
+      </iframe>
+</div>
+<div id="about-box">
+<div class="about-container">
+<div class="about-user">
+<a href="https://codepen.io/quill" target="_blank" rel="noopener" class="about-image" style="background-image: url(https://s.cdpn.io/profiles/user/172874/512.jpg?6)"></a>
+<div class="about-user-info">
+<p>
+This Pen is owned by <a href="https://codepen.io/quill" target="_blank" rel="noopener">Quill</a> on <a href="https://codepen.io/" target="_blank" rel="noopener">CodePen</a>.
+</p>
+<p>
+<a href="https://codepen.io/quill" target="_blank" rel="noopener" class="about-user-more">
+See more by @quill on CodePen
+</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="embed-footer" id="embed-footer">
+<button id="resources-link" class="resources-link action-button bottom left" href="#resources-box" aria-pressed="false" role="button">
+Resources
+</button>
+<ul class="scaling-choices bottom right">
+<li><button class="action-button active" id="zoom-button-1">1×</button></li><li><button class="action-button" id="zoom-button-05">0.5×</button></li><li><button class="action-button" id="zoom-button-025">0.25×</button></li>
+</ul>
+<button id="rerun-button" class="action-button rerun-button bottom right">
+Rerun
+</button>
+</footer>
+<div class="resources-box" id="resources-box">
+<h3>External CSS</h3>
+<ol class="list-of-resources">
+<li>
+<a href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/monokai-sublime.min.css" target="_blank">//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/monokai-sublime.min.css</a>
+</li>
+<li>
+<a href="https://cdn.quilljs.com/1.0.0-beta.9/quill.bubble.css" target="_blank">//cdn.quilljs.com/1.0.0-beta.9/quill.bubble.css</a>
+</li>
+</ol>
+<h3>External JavaScript</h3>
+<ol class="list-of-resources">
+<li>
+<a href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js" target="_blank">//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js</a>
+</li>
+<li>
+<a href="https://cdn.quilljs.com/1.0.0-beta.9/quill.js" target="_blank">//cdn.quilljs.com/1.0.0-beta.9/quill.js</a>
+</li>
+</ol>
+</div>
+<script>
+    __processedPen = {"html":"&lt;div class=&quot;container&quot; id=&quot;editor-container&quot;&gt;\n  &lt;p&gt;Gandalf the Grey&lt;/p&gt;\n&lt;/div&gt;\n&lt;div class=&quot;container javascript&quot; id=&quot;delta-container&quot;&gt;&lt;/div&gt;","css":".container {\n  border: 1px solid #ccc;\n  box-sizing: border-box;\n  display: inline-block;\n  float: left;\n  height: 400px;\n  width: 50%;\n}\n.container:first-child {\n  border-right: 0px;\n}\n#delta-container {\n  font-family: monospace;\n  overflow-y: auto;\n  white-space: pre-wrap;\n}\n","js":"var quill = new Quill(&#39;#editor-container&#39;, {\n  theme: &#39;bubble&#39; });\n\nquill.on(&#39;text-change&#39;, update);\nvar container = document.querySelector(&#39;#delta-container&#39;);\nupdate();\n\nfunction update(delta) {\n  var contents = quill.getContents();\n  console.log(&#39;contents&#39;, contents);\n  var html = &quot;contents = &quot; + JSON.stringify(contents, null, 2);\n  if (delta) {\n    console.log(&#39;change&#39;, delta);\n    html = &quot;change = &quot; + JSON.stringify(delta, null, 2) + &quot;\\n\\n&quot; + html;\n  }\n  container.innerHTML = html;\n  hljs.highlightBlock(container);\n}"};
+    __preprocessorNames = {
+      "html": "HTML",
+      "css": "CSS",
+      "js": "JS"
+    };
+    __pageType = "embed";
+    __editable = false;
+    __embed_prefill = false;
+    __env = "production";
+  </script>
+<script src="./embed-74056a7aa6eaff0b2edbead837ec13362b0601c0efa24e00ede7f8b9b205b7fa.js.download"></script>
+
+
+</body></html>

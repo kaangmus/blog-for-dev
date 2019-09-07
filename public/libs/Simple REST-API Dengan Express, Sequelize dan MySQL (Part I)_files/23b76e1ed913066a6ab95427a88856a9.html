@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)https://medium.com/media/23b76e1ed913066a6ab95427a88856a9 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>simple-rest-medium-create-db – Medium</title><meta name="description" content="GitHub is where people build software. More than 27 million people use GitHub to discover, fork, and contribute to over 80 million projects."><meta name="twitter:widgets:csp" content="on"><meta name="robots" content="noindex"><!--<base target="_blank">--><base href="." target="_blank"><style>body {text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: "ff-tisa-web-pro", Georgia, Cambria, "Times New Roman", Times, serif; font-weight: 400; color: #333332; font-size: 18px; line-height: 1.4; margin: 0; background-color: white; overflow: hidden;}iframe {max-width: 100%;}</style></head><body><style>.gist .gist-file { margin-bottom: 0 !important; }.gist { text-rendering: auto; }</style><script src="./d042edc40f6baecaabaf7099e87a936e.js.download" charset="utf-8"></script><link rel="stylesheet" href="./gist-embed-4ac6018bcc05457cde2f66d2e7299d11.css"><div id="gist89229100" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-simple-rest-sql" class="file">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-tsql ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-simple-rest-sql-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-simple-rest-sql-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">CREATE</span> <span class="pl-k">DATABASE</span> <span class="pl-k">IF</span> <span class="pl-k">NOT</span> <span class="pl-k">EXISTS</span> <span class="pl-s"><span class="pl-pds">`</span>simple-rest<span class="pl-pds">`</span></span>;</td>
+      </tr>
+      <tr>
+        <td id="file-simple-rest-sql-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-simple-rest-sql-LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-k">USE</span> <span class="pl-s"><span class="pl-pds">`</span>simple-rest<span class="pl-pds">`</span></span>;</td>
+      </tr>
+      <tr>
+        <td id="file-simple-rest-sql-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-simple-rest-sql-LC3" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-simple-rest-sql-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-simple-rest-sql-LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-k">DROP</span> <span class="pl-k">TABLE</span> <span class="pl-k">IF</span> <span class="pl-k">EXISTS</span> <span class="pl-s"><span class="pl-pds">`</span>book<span class="pl-pds">`</span></span>;</td>
+      </tr>
+      <tr>
+        <td id="file-simple-rest-sql-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-simple-rest-sql-LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-k">CREATE</span> <span class="pl-k">TABLE</span> <span class="pl-s"><span class="pl-pds">`</span>book<span class="pl-pds">`</span></span> (</td>
+      </tr>
+      <tr>
+        <td id="file-simple-rest-sql-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-simple-rest-sql-LC6" class="blob-code blob-code-inner js-file-line">  <span class="pl-s"><span class="pl-pds">`</span>id<span class="pl-pds">`</span></span> <span class="pl-k">int</span>(<span class="pl-c1">11</span>) <span class="pl-k">NOT</span> <span class="pl-k">NULL</span> AUTO_INCREMENT,</td>
+      </tr>
+      <tr>
+        <td id="file-simple-rest-sql-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-simple-rest-sql-LC7" class="blob-code blob-code-inner js-file-line">  <span class="pl-s"><span class="pl-pds">`</span>isbn<span class="pl-pds">`</span></span> <span class="pl-k">varchar</span>(<span class="pl-c1">50</span>) <span class="pl-k">NOT</span> <span class="pl-k">NULL</span>,</td>
+      </tr>
+      <tr>
+        <td id="file-simple-rest-sql-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-simple-rest-sql-LC8" class="blob-code blob-code-inner js-file-line">  <span class="pl-s"><span class="pl-pds">`</span>name<span class="pl-pds">`</span></span> <span class="pl-k">varchar</span>(<span class="pl-c1">255</span>) <span class="pl-k">NOT</span> <span class="pl-k">NULL</span>,</td>
+      </tr>
+      <tr>
+        <td id="file-simple-rest-sql-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-simple-rest-sql-LC9" class="blob-code blob-code-inner js-file-line">  <span class="pl-s"><span class="pl-pds">`</span>year<span class="pl-pds">`</span></span> <span class="pl-k">varchar</span>(<span class="pl-c1">4</span>) <span class="pl-k">NOT</span> <span class="pl-k">NULL</span>,</td>
+      </tr>
+      <tr>
+        <td id="file-simple-rest-sql-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-simple-rest-sql-LC10" class="blob-code blob-code-inner js-file-line">  <span class="pl-s"><span class="pl-pds">`</span>author<span class="pl-pds">`</span></span> <span class="pl-k">varchar</span>(<span class="pl-c1">255</span>) <span class="pl-k">NOT</span> <span class="pl-k">NULL</span>,</td>
+      </tr>
+      <tr>
+        <td id="file-simple-rest-sql-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-simple-rest-sql-LC11" class="blob-code blob-code-inner js-file-line">  <span class="pl-s"><span class="pl-pds">`</span>description<span class="pl-pds">`</span></span> <span class="pl-k">text</span> <span class="pl-k">NOT</span> <span class="pl-k">NULL</span>,</td>
+      </tr>
+      <tr>
+        <td id="file-simple-rest-sql-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-simple-rest-sql-LC12" class="blob-code blob-code-inner js-file-line">  <span class="pl-s"><span class="pl-pds">`</span>image<span class="pl-pds">`</span></span> <span class="pl-k">varchar</span>(<span class="pl-c1">255</span>) <span class="pl-k">NOT</span> <span class="pl-k">NULL</span>,</td>
+      </tr>
+      <tr>
+        <td id="file-simple-rest-sql-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-simple-rest-sql-LC13" class="blob-code blob-code-inner js-file-line">  <span class="pl-s"><span class="pl-pds">`</span>createdAt<span class="pl-pds">`</span></span> <span class="pl-k">datetime</span> <span class="pl-k">NOT</span> <span class="pl-k">NULL</span>,</td>
+      </tr>
+      <tr>
+        <td id="file-simple-rest-sql-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-simple-rest-sql-LC14" class="blob-code blob-code-inner js-file-line">  <span class="pl-s"><span class="pl-pds">`</span>updatedAt<span class="pl-pds">`</span></span> <span class="pl-k">datetime</span> <span class="pl-k">NOT</span> <span class="pl-k">NULL</span>,</td>
+      </tr>
+      <tr>
+        <td id="file-simple-rest-sql-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-simple-rest-sql-LC15" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">PRIMARY</span> <span class="pl-k">KEY</span> (id)</td>
+      </tr>
+      <tr>
+        <td id="file-simple-rest-sql-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-simple-rest-sql-LC16" class="blob-code blob-code-inner js-file-line">);</td>
+      </tr>
+      <tr>
+        <td id="file-simple-rest-sql-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-simple-rest-sql-LC17" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-simple-rest-sql-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-simple-rest-sql-LC18" class="blob-code blob-code-inner js-file-line"><span class="pl-k">INSERT</span> <span class="pl-k">INTO</span> <span class="pl-s"><span class="pl-pds">`</span>book<span class="pl-pds">`</span></span> (<span class="pl-s"><span class="pl-pds">`</span>id<span class="pl-pds">`</span></span>, <span class="pl-s"><span class="pl-pds">`</span>isbn<span class="pl-pds">`</span></span>, <span class="pl-s"><span class="pl-pds">`</span>name<span class="pl-pds">`</span></span>, <span class="pl-s"><span class="pl-pds">`</span>year<span class="pl-pds">`</span></span>, <span class="pl-s"><span class="pl-pds">`</span>author<span class="pl-pds">`</span></span>, <span class="pl-s"><span class="pl-pds">`</span>description<span class="pl-pds">`</span></span>, <span class="pl-s"><span class="pl-pds">`</span>image<span class="pl-pds">`</span></span>, <span class="pl-s"><span class="pl-pds">`</span>createdAt<span class="pl-pds">`</span></span>, <span class="pl-s"><span class="pl-pds">`</span>updatedAt<span class="pl-pds">`</span></span>) <span class="pl-k">VALUES</span></td>
+      </tr>
+      <tr>
+        <td id="file-simple-rest-sql-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-simple-rest-sql-LC19" class="blob-code blob-code-inner js-file-line">(<span class="pl-c1">1</span>, <span class="pl-s"><span class="pl-pds">'</span>9781785883262'</span>, <span class="pl-s"><span class="pl-pds">'</span>Android Programming for Beginners'</span>, <span class="pl-s"><span class="pl-pds">'</span>2015'</span>, <span class="pl-s"><span class="pl-pds">'</span>John Horton'</span>, <span class="pl-s"><span class="pl-pds">'</span>Learn Android application development with this accessible tutorial that takes you through Android and Java programming with practical and actionable steps.'</span>, <span class="pl-s"><span class="pl-pds">'</span>9781785883262.png'</span>, <span class="pl-s"><span class="pl-pds">'</span>2018-04-22 13:57:30'</span>, <span class="pl-s"><span class="pl-pds">'</span>0000-00-00 00:00:00'</span>),</td>
+      </tr>
+      <tr>
+        <td id="file-simple-rest-sql-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-simple-rest-sql-LC20" class="blob-code blob-code-inner js-file-line">(<span class="pl-c1">2</span>, <span class="pl-s"><span class="pl-pds">'</span>9781787121799'</span>, <span class="pl-s"><span class="pl-pds">'</span>Practical Game Design'</span>, <span class="pl-s"><span class="pl-pds">'</span>2018'</span>, <span class="pl-s"><span class="pl-pds">'</span>Adam Kramarzewski, Ennio De Nucci'</span>, <span class="pl-s"><span class="pl-pds">'</span>Design accessible and creative games across genres, platforms, and development realities'</span>, <span class="pl-s"><span class="pl-pds">'</span>B06082.png'</span>, <span class="pl-s"><span class="pl-pds">'</span>0000-00-00 00:00:00'</span>, <span class="pl-s"><span class="pl-pds">'</span>2018-04-22 13:57:30'</span>),</td>
+      </tr>
+      <tr>
+        <td id="file-simple-rest-sql-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-simple-rest-sql-LC21" class="blob-code blob-code-inner js-file-line">(<span class="pl-c1">3</span>, <span class="pl-s"><span class="pl-pds">'</span>9781788293631'</span>, <span class="pl-s"><span class="pl-pds">'</span>Learn Node.js by Building 6 Projects'</span>, <span class="pl-s"><span class="pl-pds">'</span>2018'</span>, <span class="pl-s"><span class="pl-pds">'</span>Eduonix Learning Solutions'</span>, <span class="pl-s"><span class="pl-pds">'</span>This is an advanced, practical guide to harnessing the power of Node.js by creating 6 full-scale real-world projects, from creating a chat application to an eLearning system.'</span>, <span class="pl-s"><span class="pl-pds">'</span>B07858_cover.png'</span>, <span class="pl-s"><span class="pl-pds">'</span>2018-04-22 13:57:14'</span>, <span class="pl-s"><span class="pl-pds">'</span>2018-04-22 13:57:14'</span>),</td>
+      </tr>
+      <tr>
+        <td id="file-simple-rest-sql-L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="file-simple-rest-sql-LC22" class="blob-code blob-code-inner js-file-line">(<span class="pl-c1">17</span>, <span class="pl-s"><span class="pl-pds">'</span>9781785283109'</span>, <span class="pl-s"><span class="pl-pds">'</span>Multiplayer Game Development with HTML5'</span>, <span class="pl-s"><span class="pl-pds">'</span>2015'</span>, <span class="pl-s"><span class="pl-pds">'</span>Rodrigo Silveira'</span>, <span class="pl-s"><span class="pl-pds">'</span>Build fully-featured, highly interactive multiplayer games with HTML5'</span>, <span class="pl-s"><span class="pl-pds">'</span>3109OS_Multiplayer Game Development with HTML5.jpg'</span>, <span class="pl-s"><span class="pl-pds">'</span>2018-04-23 18:46:36'</span>, <span class="pl-s"><span class="pl-pds">'</span>2018-04-23 18:46:36'</span>),</td>
+      </tr>
+      <tr>
+        <td id="file-simple-rest-sql-L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="file-simple-rest-sql-LC23" class="blob-code blob-code-inner js-file-line">(<span class="pl-c1">18</span>, <span class="pl-s"><span class="pl-pds">'</span>9781788299954'</span>, <span class="pl-s"><span class="pl-pds">'</span>Integrating Twitter and Facebook into Your iOS Apps'</span>, <span class="pl-s"><span class="pl-pds">'</span>2018'</span>, <span class="pl-s"><span class="pl-pds">'</span>Nick Walter'</span>, <span class="pl-s"><span class="pl-pds">'</span>Learn how to integrate Twitter and Facebook APIs into iOS apps'</span>, <span class="pl-s"><span class="pl-pds">'</span>V07323_low.png'</span>, <span class="pl-s"><span class="pl-pds">'</span>2018-04-23 18:47:04'</span>, <span class="pl-s"><span class="pl-pds">'</span>2018-04-23 18:47:04'</span>);</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/budasuyasa/d042edc40f6baecaabaf7099e87a936e/raw/f48dc3c24e1fc60ff67572828e0c40e197291310/simple-rest.sql" style="float:right">view raw</a>
+        <a href="https://gist.github.com/budasuyasa/d042edc40f6baecaabaf7099e87a936e#file-simple-rest-sql">simple-rest.sql</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<script>var height = -1; var delayMs = 200; if (document) {document.domain = document.domain;}function notifyResize(height) {height = height ? height : document.documentElement.offsetHeight; var resized = false; if (window.donkey && donkey.resize) {donkey.resize(height); resized = true;}if (parent && parent._resizeIframe) {var obj = {iframe: window.frameElement, height: height}; parent._resizeIframe(obj); resized = true;}if (window.location && window.location.hash === "#amp=1" && window.parent && window.parent.postMessage) {window.parent.postMessage({sentinel: "amp", type: "embed-size", height: height}, "*");}if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.resize) {window.webkit.messageHandlers.resize.postMessage(height); resized = true;}return resized;}function maybeResize() {try {if (document.documentElement.offsetHeight != height && notifyResize()) {height = document.documentElement.offsetHeight;}delayMs = Math.min(delayMs * 2, 1000000); setTimeout(maybeResize, delayMs);} catch(error) {console.log('maybeResize error: ', error)}}maybeResize();</script></body></html>

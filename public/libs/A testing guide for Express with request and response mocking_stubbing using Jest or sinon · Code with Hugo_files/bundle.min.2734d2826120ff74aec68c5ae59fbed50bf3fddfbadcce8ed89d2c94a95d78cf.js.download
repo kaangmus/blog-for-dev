@@ -1,0 +1,16 @@
+(function(window){function displayAmaAd(){document.querySelector('#codefund_ad').innerHTML=`<span>
+      <div class="cf-wrapper">
+        <div class="cf-header">Proudly sponsored by</div>
+        <a href="https://checkoutpage.co/checkout/hugo/consulting-fee" class="cf-text">
+          <strong>Ask Hugo anything</strong><br />
+          Get in touch, I'm available for development, career or any other type of questions
+        </a>
+
+
+        <a href="/" class="cf-powered-by">
+          <em>useful</em> products by Code with Hugo
+        </a>
+      </div>
+    </span>`}
+window.addEventListener("codefund",function(evt){if(evt.detail.status!=='ok'){displayAmaAd();}});})(window);(function(){const ctaClass='js-cta';document.addEventListener('click',function(event){let cta;event.path.forEach(function(node){if(node&&node.classList&&node.classList.contains(ctaClass)){cta=node}})
+if(cta){sa(cta.dataset.ctaEvent);}})})()

@@ -1,0 +1,302 @@
+<% include partials/header %> 
+<% include partials/sidebar %> 
+			<div class="main-panel">
+				<div class="content">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-md-8">
+								<div class="card">
+									<div class="card-header">
+										<div class="card-title">Posting Article</div>
+									</div>
+									<div class="card-body">
+
+										<form  method="post" action="/admin/insert-article" enctype="multipart/form-data" id="form-article">
+										<div class="form-group">
+											<label for="judul">Judul </label>
+											<input type="text" class="form-control" name="title" id="title" placeholder="Masukkan Judul">
+										</div>
+										<div class="form-group">
+											<label for="category">Pilih Category</label>
+											<select class="form-control" name="category" id="category" placeholder="pilih category">
+												<option value="javascript">Javascript</option>
+												<option value="php">PHP</option>
+												<option value="golong">Golang</option>
+												<option value="ruby">Ruby</option>
+											</select>
+										</div>
+										
+									<!-- 	<div class="form-group has-success">
+											<label for="successInput">Success Input</label>
+											<input type="text" id="successInput" value="Success" class="form-control">
+										</div>
+										<div class="form-group has-error has-feedback">
+											<label for="errorInput">Error Input</label>
+											<input type="text" id="errorInput" value="Error" class="form-control">
+											<small id="emailHelp" class="form-text text-muted">Please provide a valid informations.</small>
+										</div> -->
+									<!-- 	<div class="form-group">
+											<label for="disableinput">Disable Input</label>
+											<input type="text" class="form-control" id="disableinput" placeholder="Enter Input" disabled>
+										</div> -->
+										<div class="form-check">
+											<label>Status</label><br/>
+											<label class="form-radio-label">
+												<input class="form-radio-input" type="radio" name="status" value="draft"  checked="">
+												<span class="form-radio-sign">Draft</span>
+											</label>
+											<label class="form-radio-label ml-3">
+												<input class="form-radio-input" type="radio" name="status" value="post">
+												<span class="form-radio-sign">Post</span>
+											</label>
+										</div>
+									
+									
+											<div class="form-group">
+												<label for="exampleFormControlFile1">Photo</label>
+												<input type="file"  name="cover_name" class="form-control-file" id="cover_name">
+											</div>
+											<div class="form-group">
+												<label for="comment">Article</label>
+												<!-- <textarea class="form-control" id="comment" rows="5">
+
+												</textarea> -->
+												<!-- <div id="editor"></div> -->
+												<div id="standalone-container">
+												  <div id="toolbar-container">
+												    <span class="ql-formats">
+												      <select class="ql-font"></select>
+												      <select class="ql-size"></select>
+												    </span>
+												    <span class="ql-formats">
+												      <button class="ql-bold"></button>
+												      <button class="ql-italic"></button>
+												      <button class="ql-underline"></button>
+												      <button class="ql-strike"></button>
+												    </span>
+												    <span class="ql-formats">
+												      <select class="ql-color"></select>
+												      <select class="ql-background"></select>
+												    </span>
+												    <span class="ql-formats">
+												      <button class="ql-script" value="sub"></button>
+												      <button class="ql-script" value="super"></button>
+												    </span>
+												    <span class="ql-formats">
+												      <button class="ql-header" value="1"></button>
+												      <button class="ql-header" value="2"></button>
+												      <button class="ql-blockquote"></button>
+												      <button class="ql-code-block"></button>
+												    </span>
+												    <span class="ql-formats">
+												      <button class="ql-list" value="ordered"></button>
+												      <button class="ql-list" value="bullet"></button>
+												      <button class="ql-indent" value="-1"></button>
+												      <button class="ql-indent" value="+1"></button>
+												    </span>
+												    <span class="ql-formats">
+												      <button class="ql-direction" value="rtl"></button>
+												      <select class="ql-align"></select>
+												    </span>
+												    <span class="ql-formats">
+												      <button class="ql-link"></button>
+												      <button class="ql-image"></button>
+												      <button class="ql-video"></button>
+												      <button class="ql-formula"></button>
+												    </span>
+												    <span class="ql-formats">
+												      <button class="ql-clean"></button>
+												    </span>
+												  </div>
+												  <div id="editor-container"></div>
+												  <input type="hidden" name="content-article" id="content-article" >
+												</div>
+												<!-- <button onclick="logHtmlContent()">Log content as HTML</button> -->
+											</div>
+										
+										</div>
+										<div class="card-action">
+											<button type="submit" id="post-article" class="btn btn-success">Posting</button>
+											<button class="btn btn-danger">Cancel</button>
+										</div>
+
+									</form>
+									</div>
+								</div>
+					
+							<div class="col-md-4">
+								<div class="card">
+									<div class="card-header">
+										<div class="card-title">Add Category</div>
+									</div>
+									<div class="card-body">
+										<div class="form-group">
+											<label for="judul">Title </label>
+											<input type="text" class="form-control" id="new-category" placeholder="Masukkan Category">
+										</div>
+									
+							
+									
+										</div>
+										<div class="card-action">
+											<button id="addCategory" class="btn btn-success">Add Category</button>
+											<button class="btn btn-danger">Cancel</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<footer class="footer">
+						<div class="container-fluid">
+							<nav class="pull-left">
+								<ul class="nav">
+									<li class="nav-item">
+										<a class="nav-link" href="http://www.themekita.com">
+											ThemeKita
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#">
+											Help
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#">
+											Licenses
+										</a>
+									</li>
+								</ul>
+							</nav>
+							<div class="copyright ml-auto">
+								2018, made with <i class="la la-heart heart text-danger"></i> by <a href="http://www.themekita.com">ThemeKita</a>
+							</div>				
+						</div>
+					</footer>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal -->
+	<div class="modal fade" id="modalUpdate" tabindex="-1" role="dialog" aria-labelledby="modalUpdatePro" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header bg-primary">
+					<h6 class="modal-title"><i class="la la-frown-o"></i> Under Development</h6>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body text-center">									
+					<p>Currently the pro version of the <b>Ready Dashboard</b> Bootstrap is in progress development</p>
+					<p>
+					<b>We'll let you know when it's done</b></p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="../admin/assets/js/core/jquery.3.2.1.min.js"></script>
+<script src="../admin//assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script src="../admin//assets/js/core/popper.min.js"></script>
+<script src="../admin/assets/js/core/bootstrap.min.js"></script>
+<script src="../admin/assets/js/plugin/chartist/chartist.min.js"></script>
+<!-- <script src="../admin/assets/js/plugin/chartist/plugin/chartist-plugin-tooltip.min.js"></script> -->
+<script src="../admin/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+<script src="../admin/assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
+<script src="../admin/assets/js/plugin/jquery-mapael/jquery.mapael.min.js"></script>
+<script src="../admin/assets/js/plugin/jquery-mapael/maps/world_countries.min.js"></script>
+<script src="../admin/assets/js/plugin/chart-circle/circles.min.js"></script>
+<script src="../admin/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+<script src="../admin/assets/js/ready.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
+<script src="../libs/quill.js"></script>
+<script src="../libs/image-resize.min.js"></script>
+<!-- <script src="../admin/assets/js/demo.js"></script> -->
+
+<!-- <script>
+  var quill = new Quill('#editor', {
+    theme: 'snow'
+  });
+  const editor = document.getElementById('editor');
+   function logHtmlContent() {
+    console.log(quill.root.innerHTML);
+    // console.log(editor.firstChild.innerHTML);
+  }
+</script> -->
+
+<script>
+  var quill = new Quill('#editor-container', {
+    modules: {
+      syntax: true,
+      toolbar: '#toolbar-container',
+       imageResize: {
+          displaySize: true
+        },
+    },
+    placeholder: 'Compose an epic...',
+    theme: 'snow'
+  });
+
+  $(document).ready(function() {
+  	  $("#post-article").on('click',(function(e){
+  	  	 var title = $('#title').val();
+  	  	 var category = $('#category').val();
+  	  	 var status = $("input[name='status']").val();
+ 	     var content_article =document.getElementsByName("content-article").value=quill.root.innerHTML;
+  	  	 var cover_name = $('#cover_name')[0].files;
+              $.ajax({
+		  		  url: '/admin/insert-article',
+		          method: 'POST',
+		          // enctype : 'multipart/form-data',
+		          data: { title :title, category:category,status:status,content_article:content_article},
+                  success:function(response){
+               		console.log(response);
+                    if(response == 'success'){                            
+                       
+                      }                                 // reload();
+                  	 }
+	               }); 
+
+  	  }))
+  })
+
+  	$('#addCategory').on('click', function(){
+  		var new_category = $('#new-category').val();
+		var placementFrom = "top";
+		var placementAlign = "right";
+		var state = "success";
+		var style = "withicon";
+
+		var content = {};
+		content.icon ="la la-bell";
+		content.message = 'Category berhasil ditambahkan';
+		content.title = 'Success';
+		content.url = 'index.html';
+		content.target = '_blank';
+
+      	$.ajax({
+	         url: "/admin/insert-category",
+	         method: "POST",	        
+	         data : { title : new_category },
+	         success:function(response){
+	           console.log(response);
+	                if(response == 'success'){                            
+                   		$.notify(content,{
+						type: state,
+						placement: {
+							from: placementFrom,
+							align: placementAlign
+						},
+						time: 20,
+					});
+	               }                                 // reload();
+	         }
+	     }); 
+	});
+
+</script>
+</html>

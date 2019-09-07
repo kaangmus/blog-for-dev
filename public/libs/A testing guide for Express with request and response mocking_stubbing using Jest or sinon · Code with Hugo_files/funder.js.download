@@ -1,0 +1,10 @@
+(function() {
+  function embed () {
+    var evt = new Event('codefund');
+      console.log('CodeFund does not have an advertiser for you at this time.');
+      evt.detail = { status: 'no-advertiser' };
+    document.removeEventListener('DOMContentLoaded', embed);
+    window.dispatchEvent(evt);
+  };
+  (document.readyState === 'loading') ? document.addEventListener('DOMContentLoaded', embed) : embed();
+})();

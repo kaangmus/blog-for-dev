@@ -1,0 +1,20 @@
+$(document).ready(function(){var $postContent=$(".post-full-content");$postContent.fitVids();var progressBar=document.querySelector('progress');var header=document.querySelector('.floating-header');var title=document.querySelector('.post-full-title');var lastScrollY=window.scrollY;var lastWindowHeight=window.innerHeight;var lastDocumentHeight=$(document).height();var ticking=false;function onScroll(){lastScrollY=window.scrollY;requestTick();}
+function onResize(){lastWindowHeight=window.innerHeight;lastDocumentHeight=$(document).height();requestTick();}
+function requestTick(){if(!ticking){requestAnimationFrame(update);}
+ticking=true;}
+function update(){var trigger=title.getBoundingClientRect().top+window.scrollY;var triggerOffset=title.offsetHeight+35;var progressMax=lastDocumentHeight-lastWindowHeight;if(lastScrollY>=trigger+triggerOffset){header.classList.add('floating-active');}else{header.classList.remove('floating-active');}
+progressBar.setAttribute('max',progressMax);progressBar.setAttribute('value',lastScrollY);ticking=false;}
+window.addEventListener('scroll',onScroll,{passive:true});window.addEventListener('resize',onResize,false);update();});(function(document){function getLastDocumentHeight(document){var body=document.body;var html=document.documentElement;return Math.max(body.scrollHeight,body.offsetHeight,html.clientHeight,html.scrollHeight,html.offsetHeight);}
+var $overlay=document.querySelector('.overlay-cta');var hiddenClass='overlay-cta--hidden';var closedClass='overlay-cta--closed';var COOKIE_NAME='overlayClosed';function shouldShowBanner(){if(document.cookie.split(';').filter(function(item){return item.trim().indexOf(COOKIE_NAME+'=')==0}).length){return false}
+return true}
+var showBanner=shouldShowBanner()
+function weekFromNowExpires(){const now=new Date();const dayNow=now.getDate();const dayNextWeek=dayNow+7;const dateNextWeek=new Date();dateNextWeek.setDate(dayNextWeek);return dateNextWeek.toUTCString();}
+function closeBanner(){document.cookie=COOKIE_NAME+'=true; expires='+weekFromNowExpires();}
+var $overlayClose=document.querySelector('.overlay-cta__close');if(!showBanner){$overlay.classList.add(closedClass);}
+var overlayCloseListener=$overlayClose.addEventListener('click',function(e){e.preventDefault();sa('overlay_close');closeBanner();$overlay.classList.add(closedClass);});var $heroCtaButton=document.querySelector('.hero-cta .button');var $firstContentItem=document.querySelector('.post-full-content > * > *');var title=$heroCtaButton||$firstContentItem;var $subscribeBox=document.querySelector('.subscribe-form');var lastScrollY=window.scrollY;var lastWindowHeight=window.innerHeight;var lastDocumentHeight=getLastDocumentHeight(document);var ticking=false;function onScroll(){lastScrollY=window.scrollY;requestTick();}
+function onResize(){lastWindowHeight=window.innerHeight;lastDocumentHeight=getLastDocumentHeight(document);requestTick();}
+function requestTick(){if(!ticking){requestAnimationFrame(update);}
+ticking=true;}
+function update(){var trigger=title.getBoundingClientRect().top+window.scrollY;var triggerOffset=title.offsetHeight+35;var lastShowCtaBoxHeight=$subscribeBox.getBoundingClientRect().top;if(lastScrollY>=trigger+triggerOffset&&lastShowCtaBoxHeight>lastWindowHeight){$overlay.classList.remove(hiddenClass);}else{$overlay.classList.add(hiddenClass);}
+ticking=false;}
+window.addEventListener('scroll',onScroll,{passive:true});window.addEventListener('resize',onResize,false);update();})(document);
