@@ -28,29 +28,28 @@ exports.insertCategory = async (req,res)=>{
 
 
 exports.insertArticle = async (req,res)=>{
-	const data = {title,category,status,content_article} = req.body;
-	console.log(data)
-	// console.log(req.file.filename)
-  // res.json('success')
-	 // const storage = multer.diskStorage({
-  //     destination: function (req, file, cb) {
-  //       cb(null, 'uploads/')
-  //     },
-  //     filename: function (req, file, cb) {
-  //       cb(null, file.originalname)
-  //     }
-  //   });
-  //    const upload = multer({storage: storage}).single('cover');
+	// const data = {title,category,status,content_article} = req.body;
+	// console.log(req.files)
 
-  //    upload(req, res, function(err){
-  //         if(err) throw err
-  //         	const data = {title, category, status} = req.body;
-  //         	data.cover_name =req.file.filename;
+	 const storage = multer.diskStorage({
+      destination: function (req, file, cb) {
+        cb(null, 'uploads/')
+      },
+      filename: function (req, file, cb) {
+        cb(null, file.originalname)
+      }
+    });
+     const upload = multer({storage: storage}).single('cover_name');
 
-  //           // Article.insert(data,(err,results)=>{
-  //           //   // console.log(results);
-  //           // })
-  //     });
+     upload(req, res, function(err){
+          if(err) throw err
+          	const data = {title, category, status,content_article} = req.body;
+          	data.cover_name =req.file.filename;
+            // console.log(data)
+            Article.insert(data,(err,results)=>{
+               res.json('success')  
+            })
+      });
      	
 } 
 

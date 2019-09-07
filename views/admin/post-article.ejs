@@ -241,43 +241,34 @@
     theme: 'snow'
   });
 
-  $(document).ready(function() {
-  	  $("#post-article").on('click',(function(e){
-  	  	 var title = $('#title').val();
-  	  	 var category = $('#category').val();
-  	  	 var status = $("input[name='status']").val();
- 	     var content_article =document.getElementsByName("content-article").value=quill.root.innerHTML;
-  	  	 var cover_name = $('#cover_name')[0].files;
-              $.ajax({
-		  		  url: '/admin/insert-article',
-		          method: 'POST',
-		          // enctype : 'multipart/form-data',
-		          data: { title :title, category:category,status:status,content_article:content_article},
-                  success:function(response){
-               		console.log(response);
-                    if(response == 'success'){                            
-                       
-                      }                                 // reload();
-                  	 }
-	               }); 
 
-  	  }))
-  })
+$(document).ready(function(){
+        $('#form-article').submit(function(e){
+			var data = new FormData(this)
+         	data.append('content_article',document.getElementsByName("content-article").value=quill.root.innerHTML);       	
+            e.preventDefault(); 
+                 $.ajax({
+                     url:'/admin/insert-article',
+                     type:"post",
+                     data:data,
+                     processData:false,
+                     contentType:false,
+                     cache:false,
+                     async:false,
+                      success: function(response){
+                            if(response == 'success'){   
+						       notif('Article');
+	               			} 
+                   }
+                 });
+            });
+         
+ 
+    });
+
 
   	$('#addCategory').on('click', function(){
-  		var new_category = $('#new-category').val();
-		var placementFrom = "top";
-		var placementAlign = "right";
-		var state = "success";
-		var style = "withicon";
-
-		var content = {};
-		content.icon ="la la-bell";
-		content.message = 'Category berhasil ditambahkan';
-		content.title = 'Success';
-		content.url = 'index.html';
-		content.target = '_blank';
-
+  		      var new_category = $('#new-category').val();
       	$.ajax({
 	         url: "/admin/insert-category",
 	         method: "POST",	        
@@ -285,7 +276,27 @@
 	         success:function(response){
 	           console.log(response);
 	                if(response == 'success'){                            
-                   		$.notify(content,{
+                      notif('Category');
+	               }                                 // reload();
+	         }
+	     }); 
+	});
+
+
+    function notif(title){
+		var placementFrom = "top";
+		var placementAlign = "right";
+		var state = "success";
+		var style = "withicon";
+        var title_action = title;
+		var content = {};
+		content.icon ="la la-bell";
+		content.message = `${title_action} berhasil ditambahkan`;
+		content.title = 'Success';
+		content.url = 'index.html';
+		content.target = '_blank';
+
+				$.notify(content,{
 						type: state,
 						placement: {
 							from: placementFrom,
@@ -293,10 +304,7 @@
 						},
 						time: 20,
 					});
-	               }                                 // reload();
-	         }
-	     }); 
-	});
+    }
 
 </script>
 </html>
